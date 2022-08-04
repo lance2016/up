@@ -31,11 +31,14 @@ def save_file(df, file_name):
     print(f"save {full_path} success, length:{df.shape[0]}")
 
 
+# connect to gp and execute sql, return DataFrame
+def get_df_content(sql, conn):
+    return pd.read_sql_query(sql=sql, con=conn)
 
 
 def test(conn):
     sql = '''
-    select * from szcs_idm.i_zhrc limit 0,1
+    select * from szcs_idm.***
     '''
     relation_df = get_df_content(sql, conn)
     save_file(relation_df, 'lb_bq')
