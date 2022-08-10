@@ -40,3 +40,9 @@ insert into cw_data_platform_dev.cw_scheduler_ip_port
 kafka_truststore_path = "/dhw_home/conf/user_config/phy_ca.rt" 
 # 配置 keystore (私钥) 的文件
 kafka_keystore_path = "/dhw_home/conf/user_config/phy_ca.rt"
+
+
+# flink服务
+flink_server_host=10.128.174.197
+flink_server_port=28081
+flink_sink_file_path=/home
