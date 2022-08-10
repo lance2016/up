@@ -32,3 +32,11 @@ ALTER TABLE "cw_data_platform_dev"."cw_server_manager" ALTER COLUMN "type" type 
 -- 高斯专用
 insert into cw_data_platform_dev.cw_scheduler_ip_port
     values('default',8082,'gsfs','enable',now(),now());
+
+
+
+# kafka SASL_SSL证书配置
+# 配置服务端提供的 truststore (CA 证书) 的文件
+kafka_truststore_path = "/dhw_home/conf/user_config/phy_ca.rt" 
+# 配置 keystore (私钥) 的文件
+kafka_keystore_path = "/dhw_home/conf/user_config/phy_ca.rt"
