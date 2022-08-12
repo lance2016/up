@@ -70,13 +70,13 @@ if __name__ == "__main__":
     p = Process(target=produce_message, args=(bootstrap_servers, topic, send_data))
     p.start()
 
-    # p1 = Process(target=comsume_message, args=('进程1', 'group3', topic))
+    p1 = Process(target=comsume_message, args=('进程1', 'group3', topic))
     # p2 = Process(target=comsume_message, args=('进程2', 'group1', topic))
-    # p1.start()
+    p1.start()
     # p2.start()
 
     p.join()
-    # p1.join()
+    p1.join()
     # p2.join()
     print("main process end")
 
