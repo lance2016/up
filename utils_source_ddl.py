@@ -34,11 +34,9 @@ def get_sr_sasl_kafka_ddl(sourceConnectInfo, args) -> str:
         "   'properties.group.id' = '{consumer_group}',  \n"
         "   'scan.startup.mode' = '{consume_strategy}',  \n"
         "   'format' = '{format_type}', \n"
-        "   'properties.security.protocol' = 'SASL_SSL',  \n"
+        "   'properties.security.protocol' = 'SASL_PLAINTEXT',  \n"
         "   'properties.ssl.truststore.location' = '{truststore_path}',  \n"
         "   'properties.ssl.truststore.password' = '{db_passwd}',  \n"
-        "   'properties.ssl.keystore.location' = '{keystore_path}',  \n"
-        "   'properties.ssl.keystore.password' = '{db_passwd}',  \n"
         "   'properties.sasl.mechanism' = 'SCRAM-SHA-256',  \n"
         "   'properties.sasl.jaas.config' = 'org.apache.kafka.common.security.scram.ScramLoginModule required username=\"{user_name}\" password=\"{db_passwd}\";' \n"
         ")".format(
@@ -55,6 +53,7 @@ def get_sr_sasl_kafka_ddl(sourceConnectInfo, args) -> str:
             db_passwd=sourceConnectInfo["db_passwd"]
         )
     )
+    print(source_ddl)
     return source_ddl
 
 
